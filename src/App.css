@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --border: #ffffff;
+  --accent: #32d600;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Mono', monospace;
+  line-height: 1.6;
+
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 600px;
+}
+
+.name {
+  font-size: clamp(28px, 5vw, 48px);
+}
+
+.description {
+  font-size: clamp(16px, 2vw, 24px);
+  color: #ffffff;
+}
+
+.downloadcv {
+  position: relative;
+  text-decoration: none;
+  color: var(--text);
+  padding: 12px 24px;
+  font-size: 20px;
+  border: 0.5px solid var(--border);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.downloadcv span {
+  position: absolute;
+  background: var(--accent);
+}
+
+.downloadcv span:nth-child(1) {
+  height: 1px;
+  width: 100%;
+  top: 0;
+  left: -100%;
+}
+
+.downloadcv span:nth-child(2) {
+  width: 1px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+}
+
+.downloadcv span:nth-child(3) {
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  right: -100%;
+}
+
+.downloadcv span:nth-child(4) {
+  width: 1px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+}
+
+.downloadcv:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.5s;
+}
+
+.downloadcv:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.5s 0.125s;
+}
+
+.downloadcv:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.5s 0.25s;
+}
+
+.downloadcv:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.5s 0.375s;
+}
+
+.downloadcv:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.footer-content{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  color: var(--accent);
+}
+
+/* CONTACT */
+.contact {
+  width: 90%;
+  padding: 80px 10%;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
+
+/* item */
+.contact-item {
+  border: 0.5px solid var(--border);
+  padding: 10px;
+  transition: all 0.2s ease;
+}
+
+/* label */
+.contact-label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+/* link */
+.contact-item a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.2s ease;
+}
+
+/* hover clean */
+.contact-item:hover {
+  border-color: var(--accent);
+}
+
+.contact-item:hover a {
+  color: var(--accent);
+}
+.contact-title {
+  text-align: center;
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .page {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .contact-grid {
+  grid-template-columns: 1fr;
+}
+
+  .logo {
+    align-items: center;
+  }
+}

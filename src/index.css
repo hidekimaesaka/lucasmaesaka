@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  background: #000000;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/IBMPlexMono-Regular.ttf');
+}
